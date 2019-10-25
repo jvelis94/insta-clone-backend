@@ -1,0 +1,14 @@
+{
+    "data": [
+        {
+            "messages": [
+                {
+                    "avatar": "https://picsum.photos/200",
+                    "user": "velisjoel",
+                    "message": "hello how are you today"
+                }
+            ],
+            
+        }
+    ] 
+}

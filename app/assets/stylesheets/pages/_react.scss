@@ -1,0 +1,150 @@
+// Chat
+#message {
+    list-style-type: none;
+    display: flex;
+    text-align: left;
+    align-items: center;
+  }
+  
+  #message img {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  #username {
+    font-size: 0.85rem;
+  }
+  #message-text {
+    color: #ffffff;
+    background-color: #5BC9E7;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 10px;
+  }
+  
+  #message-input {
+    padding: 0 40px;
+  }
+
+  // Social
+  #profile-top {
+    width: 90%;
+    margin: 0 auto;
+    padding: 0px 0px 20px 0px;
+}
+
+#profile-top ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#profile-img {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    border: 0.5px solid black;
+    padding: 2px;
+}
+
+#profile-name-caption {
+    text-align: left;
+}
+
+#profile h6 {
+    margin: 0;
+}
+
+#post-image {
+    width: 100%;
+}
+
+#photo-thumbnails img {
+    width: 100%;
+    border: 0.5px solid #ffffff;
+}
+
+#photo-thumbnails {
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 0px;
+    padding: 0;
+}
+
+#post-top img {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 0.5px solid #000000;
+    margin-right: 10px;
+    padding: 2px;
+}
+
+#post-top, #post-bottom {
+    text-align: left;
+    width: 90%;
+    margin: 10px auto;
+}
+
+// App
+.App {
+    text-align: center;
+  }
+  
+  .App-logo {
+    height: 40vmin;
+  }
+  
+  .App-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
+  
+  .App-link {
+    color: #09d3ac;
+  }
+  
+  #header-title {
+    font-family: 'Grand Hotel', cursive;
+    font-size: 2.5rem;
+    margin-top: 12px;
+    display: inline-block;
+  }
+  
+  #message-icon {
+    position: absolute;
+    right: 24px;
+    top: 24px;
+    font-size: 1.3rem;
+  }
+  
+  #view-options {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-top: 0.5px solid grey;
+    border-bottom: 0.5px solid grey;
+    padding: 8px 0;
+    font-size: 1.5rem;
+  }
+  
+  #header-wrapper {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: #ffffff;
+  }
+  
+  
