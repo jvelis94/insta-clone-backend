@@ -78,8 +78,8 @@
 }
 
 #post-top img {
-    width: 25px;
-    height: 25px;
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
     border: 0.5px solid #000000;
     margin-right: 10px;
@@ -129,6 +129,13 @@
     top: 24px;
     font-size: 1.3rem;
   }
+
+  #camera-icon {
+    position: absolute;
+    left: 24px;
+    top: 24px;
+    font-size: 1.3rem;
+  }
   
   #view-options {
     display: flex;
@@ -145,6 +152,7 @@
     top: 0;
     z-index: 1;
     background-color: #ffffff;
+    text-align: center;
   }
   
   

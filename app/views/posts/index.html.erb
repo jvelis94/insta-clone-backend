@@ -1,0 +1,17 @@
+<div>
+    <% @posts.each do |post| %>
+        <section id='post-top'>
+            <%= image_tag post.user.avatar if post.user.avatar.attached? %> <span><strong><%= post.user.username%></strong></span>
+        </section>
+        <% post.photos.each do |photo| %>
+            <%= image_tag photo, id: 'post-image' %>
+        <% end %>
+        <section id='post-bottom'>
+            <p><strong><%= post.user.username%></strong><span><%= post.caption %></span></p>
+        </section>
+        <hr/>
+    <% end %>
+</div>
+    
+<%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+<%= link_to 'Sign In', new_user_session_path %>

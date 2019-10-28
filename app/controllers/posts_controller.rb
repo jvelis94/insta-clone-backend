@@ -16,9 +16,10 @@ class PostsController < ApplicationController
 
     def create
         @post = Post.new(post_params)
+        @post.user = current_user
         respond_to do |format|
             if @post.save
-                format.html { redirect_to posts_path, notice: 'post was successfully created.' }
+                format.html { redirect_to authenticated_root_path, notice: 'post was successfully created.' }
             else
                 format.html { render action: 'new'}
             end
