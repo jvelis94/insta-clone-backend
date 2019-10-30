@@ -19,6 +19,12 @@ Rails.application.routes.draw do
     resources :comments
   end
 
+  resources :posts do
+    member do
+      patch :addLike
+      patch :decreaseLike
+    end
+  end
   # get "/posts", to: "pages#home"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   
