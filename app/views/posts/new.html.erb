@@ -1,5 +1,5 @@
 <div>
-    <%= simple_form_for(@post) do|f| %>
+    <%= simple_form_for(@post) do |f| %>
         <%= f.input :caption %>
         <%= f.file_field :photos, multiple: true, direct_upload: true %>
         <%= f.button :submit, 'Post' %>
