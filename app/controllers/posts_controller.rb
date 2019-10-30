@@ -36,6 +36,26 @@ class PostsController < ApplicationController
 
     def destroy
         @post.destroy
+        redirect_to authenticated_root_path
+    end
+
+    def addLike
+        @post = Post.find(params[:id])
+        if @post
+            @post.update_attribute(:likes, @post.likes + 1) 
+            @post.update_attribute(:likedusers, @post.likedusers + [current_user.username])
+        else
+            @post.update_attribute(:likes, 1)
+            @post.update_attribute(:likedusers, [current_user.username])
+        end
+        redirect_to authenticated_root_path
+    end
+
+    def decreaseLike
+        @post = Post.find(params[:id])
+        @post.update_attribute(:likedusers, @post.likedusers.delete(current_user.username))
+        @post.update_attribute(:likes, @post.likes - 1)
+        redirect_to authenticated_root_path
     end
 
     private

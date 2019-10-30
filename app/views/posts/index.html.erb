@@ -7,6 +7,18 @@
             <%= image_tag photo, id: 'post-image' %>
         <% end %>
         <section id='post-bottom'>
+            <% if post.user.username == current_user.username %>
+                <i class="fas fa-heart"></i>
+            <% elsif post.likedusers && (post.likedusers.include? current_user.username) %>
+                <%= link_to decreaseLike_post_path(post), method: :patch do %>
+                    <i class="fas fa-heart"></i>
+                <% end %>
+            <% else %>
+                <%= link_to addLike_post_path(post), method: :patch do %>
+                    <i class="far fa-heart"></i>
+                <% end %>
+            <% end %>
+
             <p><strong><%= post.user.username%></strong><span><%= post.caption %></span></p>
         </section>
         <hr/>
