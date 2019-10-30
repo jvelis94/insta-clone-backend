@@ -8,7 +8,7 @@ class ProfilesController < ApplicationController
 
     def show
         @profile = Profile.find(params[:id])
-        render json: @profile
+        # render json: @profile
     end
 
     def new
@@ -18,14 +18,14 @@ class ProfilesController < ApplicationController
 
     def create
         @profile = Profile.new(profile_params)
+        @profile.user = current_user
         respond_to do |format|
             if @profile.save
-                format.html { redirect_to profiles_path, notice: 'profile was successfully created.' }
+                format.html { redirect_to authenticated_root_path, notice: 'profile was successfully created.' }
             else
                 format.html { render action: 'new'}
             end
         end
-        render json: @profile
     end
 
     def edit
