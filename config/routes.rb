@@ -10,7 +10,14 @@ Rails.application.routes.draw do
   end
 
   resources :profiles
-  resources :posts
+
+  resources :posts do
+    resources :comments
+  end
+
+  resources :comments do
+    resources :comments
+  end
 
   # get "/posts", to: "pages#home"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
