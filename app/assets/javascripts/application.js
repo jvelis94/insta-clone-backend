@@ -3,6 +3,16 @@
 //= require activestorage
 // direct_uploads.js
 
+let listHandle = () => {
+  document.getElementById("list").style.display = "contents"
+  document.getElementById('grid').style.display = "none"
+}
+
+let gridHandle = () => {
+  document.getElementById("list").style.display = "none"
+  document.getElementById('grid').style.display = "contents"
+}
+
 addEventListener("direct-upload:initialize", event => {
     const { target, detail } = event
     const { id, file } = detail
