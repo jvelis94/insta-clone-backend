@@ -1,8 +1,11 @@
 <div>
     <% @posts.each do |post| %>
-        <section id='post-top'>
-            <%= image_tag post.user.avatar if post.user.avatar.attached? %> <span><strong><%= post.user.username%></strong></span>
-        </section>
+        <%= link_to profile_path(post.user.profile) do %>
+            <section id='post-top'>
+                <%= image_tag post.user.avatar if post.user.avatar.attached? %> <span><strong><%= post.user.username%></strong></span>
+            </section>
+        <% end %>
+        
         <% post.photos.each do |photo| %>
             <%= image_tag photo, id: 'post-image' %>
         <% end %>
@@ -19,13 +22,22 @@
                 <% end %>
             <% end %>
 
-            <p><strong><%= post.user.username%></strong><span><%= post.caption %></span></p>
+            <% if post.likes == 1 %>
+                <span> <i><%= post.likes %> like</i></span>
+                <% elsif post.likes > 1 %>
+                <span> <i><%= post.likes %> likes</i></span>
+            <% end %>
+        
+            <p><strong><%= post.user.username%></strong> <span><%= post.caption %></span></p>
+        
         </section>
+        
         <hr/>
+        
         <div class='comment-section'>
             <div id='comment-form'>
                 <h5 style='margin-bottom: 25px'><%= post.comments.size %> Comments</h5>
-                <%= simple_form_for([post, Comment.new]) do |f| %>
+                <%= simple_form_for([post, Comment.new], remote:true) do |f| %>
                     <%= f.input :content, input_html: { class: 'form-control', style: 'margin-bottom: 8px' }, placeholder: 'Your Comment', label: false %>
                     <%= f.button :submit, label: 'Submit', class: 'btn btn-primary' %>
                 <% end %>

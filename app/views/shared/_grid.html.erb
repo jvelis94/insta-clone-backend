@@ -1,7 +1,9 @@
 <ul id='photo-thumbnails'>
     <% @profile.user.posts.each do |post| %>
+        <%= link_to post_path(post) do %>
             <% post.photos.each do |photo| %>
                 <li><%= image_tag photo %></li>
             <% end %>        
+        <% end %>
     <% end %>
 </ul>

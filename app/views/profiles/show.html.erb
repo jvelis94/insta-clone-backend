@@ -23,14 +23,14 @@
         </section>
     </section>
     <section id='view-options'>
-        <i onClick='listHandle()' class="fas fa-th"></i>
-        <i onClick='gridHandle()' class="fas fa-bars"></i>
+        <i onClick='gridHandle()' class="fas fa-th"></i>
+        <i onClick='listHandle()' class="fas fa-bars"></i>
     </section>
 
-    <section id='list'>
-    <%= render 'shared/list'%>
-    </section>
-
-    <section id='grid'>
+    <section id='grid' style='display:contents'>
         <%= render 'shared/grid'%>
+    </section>
+
+     <section id='list' style='display:none'>
+        <%= render 'shared/list'%>
     </section>

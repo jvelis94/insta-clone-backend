@@ -10,7 +10,7 @@ class CommentsController < ApplicationController
       @comment.posts_id = params['post_id']
       @comment.user = current_user
       if @comment.save
-        redirect_to request.referrer, notice: 'Your comment was successfully posted!'
+          redirect_to request.referrer, notice: 'Your comment was successfully posted!'
       else
           redirect_to request.referrer, notice: "Your comment wasn't posted!"
       end
