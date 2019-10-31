@@ -1,0 +1,18 @@
+<div class='form-row'>
+<%= form_tag search_path, style: 'display: flex', method: :get do %>
+    <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Search for users"
+    %>
+    <%= submit_tag "Search", class: "btn btn-primary"%>
+<% end %>
+</div><br>
+<div>
+    <% @profiles.each do |profile| %>
+        <%= link_to profile_path(profile) do %>
+            <%= image_tag profile.user.avatar, height: 30, width: 30, style: 'border-radius: 50%', crop: :fill %>
+            <%= profile.user.username %>
+        <% end %><br>
+    <% end %>
+</div>
