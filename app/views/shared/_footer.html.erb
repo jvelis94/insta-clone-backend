@@ -1,0 +1,19 @@
+<div id='footer-wrapper'>
+    <%= link_to(search_path) do %>
+        <h3><i class="fas fa-search"></i></h3>
+    <% end %>
+
+    <%= link_to(new_post_path) do %>
+        <h3><i class="far fa-plus-square"></i></h3>
+    <% end %>
+
+    <% if user_signed_in? %>
+        <%= link_to profile_path(current_user.profile) do %>
+            <h3><i class="fas fa-user"></i></h3>
+        <% end %>
+    <% else %>
+        <%= link_to new_user_session_path do %>
+            <h3><i class="fas fa-user"></i></h3>
+        <% end %>
+    <% end %>
+</div>

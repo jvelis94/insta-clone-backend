@@ -12,9 +12,24 @@
 @import "components/index";
 @import "pages/index";
 @import "pages/react";
+@import "pages/modal";
+
+#name-caption {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a, a:hover {
+  color: black;
+}
 
 .comment-section {
-  margin-top: 25px;
+  margin: 0px 25px;
 }
 
 #comment-body {
