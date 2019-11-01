@@ -19,8 +19,25 @@
         </ul>
         <section id='profile-name-caption'>
             <h6><strong><%= @profile.user.first_name %></strong></h6>
-            <p><%= @profile.caption %></p>
+            <div id='name-caption'>
+                <p><%= @profile.caption %></p>
+                <% if current_user.id == @profile.user.id  %>
+                    <div id='modal-button'>
+                        <i id="myBtn" class="fas fa-ellipsis-h"></i>
+                    </div>
+                <% end %>
+            </div>
         </section>
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p style='text-align: center'><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></p>
+                <p style='text-align: center'><%= link_to 'Edit Credentials', user_registration_path, method: :patch %></p>
+                <p style='text-align: center'><%= link_to 'Edit Profile', edit_profile_path(current_user.profile) %></p>
+            </div>
+        </div>
     </section>
     <section id='view-options'>
         <i onClick='gridHandle()' class="fas fa-th"></i>
