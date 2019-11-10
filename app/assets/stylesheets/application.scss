@@ -14,7 +14,31 @@
 @import "pages/react";
 @import "pages/modal";
 
+//style sign-in pages
+.page-width {
+  width: 90%;
+  margin: 20px auto;
+}
 
+.page-width form span {
+  margin-left: 10px;
+}
+
+.page-width form span label {
+  margin-left: 2.5px;
+}
+
+.form-titles {
+  text-align: center;
+  margin-top: 20px;
+  color: #949494;
+}
+//
+
+#user-search {
+  display:flex;
+  align-items: center;
+}
 
 #container {
   margin-bottom: 100px;

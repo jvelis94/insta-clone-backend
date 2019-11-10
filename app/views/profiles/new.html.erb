@@ -1,6 +1,6 @@
-<div>
+<div class='page-width'>
     <%= simple_form_for(@profile) do |f| %>
         <%= f.input :caption %>
-        <%= f.button :submit, 'Post' %>
+        <%= f.button :submit, 'Post', class: "btn btn-primary" %>
     <% end %>
 </div>
