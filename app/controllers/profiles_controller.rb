@@ -40,6 +40,22 @@ class ProfilesController < ApplicationController
         @profile.destroy
     end
 
+    def follow_user
+        @follow_profile = Profile.find(params[:id])
+        @user_profile = current_user.profile
+        @follow_profile.update_attribute(:followers, @follow_profile.followers + [current_user.username])
+        @user_profile.update_attribute(:following, @user_profile.following + [@follow_profile.user.username])
+        redirect_to request.referrer
+    end
+
+    def unfollow_user
+        @unfollow_profile = Profile.find(params[:id])
+        @user_profile = current_user.profile
+        @unfollow_profile.update_attribute(:followers, @unfollow_profile.followers - [current_user.username])
+        @user_profile.update_attribute(:following, @user_profile.following - [@unfollow_profile.user.username])
+        redirect_to request.referrer
+    end
+
     private
 
     def profile_params
