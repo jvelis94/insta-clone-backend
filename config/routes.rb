@@ -11,7 +11,13 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :profiles
+  resources :profiles do
+    member do
+      patch :follow_user
+      patch :unfollow_user
+    end
+  end
+
 
   resources :posts do
     resources :comments
