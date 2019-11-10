@@ -1,7 +1,8 @@
-<div>
+<div class='page-width'>
     <%= simple_form_for(@post) do |f| %>
         <%= f.input :caption %>
         <%= f.file_field :photos, multiple: true, direct_upload: true %>
-        <%= f.button :submit, 'Post' %>
+        <br><br>
+        <%= f.button :submit, 'Post', class: "btn btn-primary" %>
     <% end %>
 </div>
